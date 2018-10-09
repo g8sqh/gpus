@@ -29,6 +29,9 @@ $app = new Laravel\Lumen\Application(
 
 // Ensure that Redis is properly loaded.
 $app->configure('database');
+// Load additional config files.
+$app->configure('filesystems');
+$app->configure('users');
 
 /*
 |--------------------------------------------------------------------------

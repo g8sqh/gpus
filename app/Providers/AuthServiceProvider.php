@@ -47,8 +47,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected function getUser($username, $password)
     {
-        foreach (explode(';', env('USERS')) as $userInfo) {
-            $user = explode(':', $userInfo);
+        foreach (config('users.credentials') as $user) {
             if ($username === $user[0]) {
                 if (app('hash')->check($password, $user[1])) {
                     return new GenericUser(['name' => $user[0]]);
