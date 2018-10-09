@@ -1,0 +1,35 @@
+version: '2.2'
+
+services:
+  # The application
+  app:
+    image: biigle/gpu-server
+    user: ${USER_ID}:${GROUP_ID}
+    build:
+      dockerfile: .docker/gpu-server.dockerfile
+      context: ./
+      args:
+        GITHUB_OAUTH_TOKEN: ${GITHUB_OAUTH_TOKEN}
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    environment:
+      - "REDIS_HOST=cache"
+
+  # The web server
+  web:
+    image: biigle/gpu-server-web
+    depends_on:
+      - app
+    build:
+      context: ./
+      dockerfile: .docker/gpu-server-web.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    ports:
+      - 8000:80
+
+  cache:
+    image: redis:3.0-alpine
+
