@@ -30,6 +30,21 @@ services:
     ports:
       - 8000:80
 
+  worker:
+    image: biigle/gpu-server-worker
+    user: ${USER_ID}:${GROUP_ID}
+    depends_on:
+      - app
+    build:
+      context: ./
+      dockerfile: .docker/gpu-server-worker.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    environment:
+      - "REDIS_HOST=cache"
+    command: "php -d memory_limit=1G artisan queue:work --sleep=5 --tries=1 --timeout=0"
+
   cache:
     image: redis:3.0-alpine
 
