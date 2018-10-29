@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Illuminate\Auth\GenericUser;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
@@ -30,31 +29,8 @@ class AuthServiceProvider extends ServiceProvider
         // should return either a User instance or null. You're free to obtain
         // the User instance via an API token or any other method necessary.
 
-        $this->app['auth']->viaRequest('api', function ($request) {
-            if ($request->getUser() && $request->getPassword()) {
-                return $this->getUser($request->getUser(), $request->getPassword());
-            }
-        });
-    }
-
-    /**
-     * Get the user with the given name and password.
-     *
-     * @param string $username
-     * @param string $password
-     *
-     * @return GenericUser|null
-     */
-    protected function getUser($username, $password)
-    {
-        foreach (config('users.credentials') as $user) {
-            if ($username === $user[0]) {
-                if (app('hash')->check($password, $user[1])) {
-                    return new GenericUser(['name' => $user[0]]);
-                }
-
-                return;
-            }
-        }
+        // $this->app['auth']->viaRequest('api', function ($request) {
+        //      return new \Illuminate\Auth\GenericUser(...);
+        // });
     }
 }

@@ -31,7 +31,6 @@ $app = new Laravel\Lumen\Application(
 $app->configure('database');
 // Load additional config files.
 $app->configure('filesystems');
-$app->configure('users');
 
 /*
 |--------------------------------------------------------------------------
