@@ -28,7 +28,7 @@ services:
     volumes:
       - ./:/var/www
     ports:
-      - 8000:80
+      - 8001:80
 
   worker:
     image: biigle/gpu-server-worker

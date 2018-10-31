@@ -31,6 +31,8 @@ $app = new Laravel\Lumen\Application(
 $app->configure('database');
 // Load additional config files.
 $app->configure('filesystems');
+$app->configure('queue');
+$app->configure('remote-queue');
 
 /*
 |--------------------------------------------------------------------------
@@ -68,9 +70,9 @@ $app->singleton(
 //    App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
-$app->routeMiddleware([
-    'auth' => App\Http\Middleware\Authenticate::class,
-]);
+// $app->routeMiddleware([
+//     'auth' => App\Http\Middleware\Authenticate::class,
+// ]);
 
 /*
 |--------------------------------------------------------------------------
@@ -84,10 +86,15 @@ $app->routeMiddleware([
 */
 
 // $app->register(App\Providers\AppServiceProvider::class);
-$app->register(App\Providers\AuthServiceProvider::class);
+// $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(Biigle\ImageCache\ImageCacheServiceProvider::class);
+$app->register(Biigle\RemoteQueue\RemoteQueueServiceProvider::class);
+
+if (class_exists('Laravel\Tinker\TinkerServiceProvider')) {
+    $app->register(Laravel\Tinker\TinkerServiceProvider::class);
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -100,10 +107,10 @@ $app->register(Biigle\ImageCache\ImageCacheServiceProvider::class);
 |
 */
 
-$app->router->group([
-    'namespace' => 'App\Http\Controllers',
-], function ($router) {
-    require __DIR__.'/../routes/web.php';
-});
+// $app->router->group([
+//     'namespace' => 'App\Http\Controllers',
+// ], function ($router) {
+//     require __DIR__.'/../routes/web.php';
+// });
 
 return $app;
