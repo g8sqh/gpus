@@ -91,6 +91,7 @@ $app->singleton(
 $app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(Biigle\ImageCache\ImageCacheServiceProvider::class);
 $app->register(Biigle\RemoteQueue\RemoteQueueServiceProvider::class);
+$app->register(Biigle\Modules\Maia\MaiaGpuServiceProvider::class);
 
 if (class_exists('Laravel\Tinker\TinkerServiceProvider')) {
     $app->register(Laravel\Tinker\TinkerServiceProvider::class);

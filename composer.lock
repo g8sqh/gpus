@@ -4,8 +4,77 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9cb6c8a9160e50c31fc2f030aee9577c",
+    "content-hash": "1415fa21888376bdc226eaf0c88dbd1b",
     "packages": [
+        {
+            "name": "biigle/annotations",
+            "version": "v3.9.2",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:biigle/annotations.git",
+                "reference": "a7a5163f76db98e6a8015cd498f9e49982e26d5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/biigle/annotations/zipball/a7a5163f76db98e6a8015cd498f9e49982e26d5a",
+                "reference": "a7a5163f76db98e6a8015cd498f9e49982e26d5a",
+                "shasum": ""
+            },
+            "require": {
+                "biigle/label-trees": "~1.3",
+                "biigle/volumes": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Biigle\\Modules\\Annotations\\": "src"
+                }
+            },
+            "scripts": {
+                "fix": [
+                    "php-cs-fixer --config-file='.php_cs' fix"
+                ]
+            },
+            "support": {
+                "source": "https://github.com/biigle/annotations/tree/v3.9.2",
+                "issues": "https://github.com/biigle/annotations/issues"
+            },
+            "time": "2018-09-18T12:33:10+00:00"
+        },
+        {
+            "name": "biigle/label-trees",
+            "version": "v1.19.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:biigle/label-trees.git",
+                "reference": "a87f67d2ab84fa4789c2e668867ae3f715034abf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/biigle/label-trees/zipball/a87f67d2ab84fa4789c2e668867ae3f715034abf",
+                "reference": "a87f67d2ab84fa4789c2e668867ae3f715034abf",
+                "shasum": ""
+            },
+            "require": {
+                "ext-soap": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Biigle\\Modules\\LabelTrees\\": "src"
+                }
+            },
+            "scripts": {
+                "fix": [
+                    "php-cs-fixer --config-file='.php_cs' fix"
+                ]
+            },
+            "support": {
+                "source": "https://github.com/biigle/label-trees/tree/v1.19.0",
+                "issues": "https://github.com/biigle/label-trees/issues"
+            },
+            "time": "2018-09-10T14:40:52+00:00"
+        },
         {
             "name": "biigle/laravel-image-cache",
             "version": "v1.0.0",
@@ -127,6 +196,149 @@
                 "issues": "https://github.com/biigle/laravel-remote-queue/issues"
             },
             "time": "2018-10-31T10:06:32+00:00"
+        },
+        {
+            "name": "biigle/largo",
+            "version": "v2.4.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:biigle/largo.git",
+                "reference": "5af1251d222ebbd424cf76f3161a8860bae11797"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/biigle/largo/zipball/5af1251d222ebbd424cf76f3161a8860bae11797",
+                "reference": "5af1251d222ebbd424cf76f3161a8860bae11797",
+                "shasum": ""
+            },
+            "require": {
+                "biigle/label-trees": "~1.3",
+                "biigle/volumes": "^2.0",
+                "ext-vips": "*",
+                "jcupitt/vips": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Biigle\\Modules\\Largo\\": "src"
+                }
+            },
+            "support": {
+                "source": "https://github.com/biigle/largo/tree/v2.4.1",
+                "issues": "https://github.com/biigle/largo/issues"
+            },
+            "time": "2018-09-18T06:39:28+00:00"
+        },
+        {
+            "name": "biigle/maia",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:biigle/maia.git",
+                "reference": "b5c39be8b531d3d7ed41e40c9cc1fbb4b2942313"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/biigle/maia/zipball/b5c39be8b531d3d7ed41e40c9cc1fbb4b2942313",
+                "reference": "b5c39be8b531d3d7ed41e40c9cc1fbb4b2942313",
+                "shasum": ""
+            },
+            "require": {
+                "biigle/annotations": "^3.9",
+                "biigle/label-trees": "^1.19",
+                "biigle/largo": "^2.4",
+                "biigle/volumes": "^2.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Biigle\\Modules\\Maia\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Martin Zurowietz",
+                    "email": "martin@cebitec.uni-bielefeld.de"
+                }
+            ],
+            "description": "Perform the Machine Learning Assisted Image Annotation method in BIIGLE",
+            "support": {
+                "source": "https://github.com/biigle/maia/tree/master",
+                "issues": "https://github.com/biigle/maia/issues"
+            },
+            "time": "2018-11-08T09:33:00+00:00"
+        },
+        {
+            "name": "biigle/projects",
+            "version": "v1.11.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:biigle/projects.git",
+                "reference": "056363452b53c5a25733aca6e5cba6268984c0ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/biigle/projects/zipball/056363452b53c5a25733aca6e5cba6268984c0ab",
+                "reference": "056363452b53c5a25733aca6e5cba6268984c0ab",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Biigle\\Modules\\Projects\\": "src"
+                }
+            },
+            "scripts": {
+                "fix": [
+                    "php-cs-fixer --config-file='.php_cs' fix"
+                ]
+            },
+            "support": {
+                "source": "https://github.com/biigle/projects/tree/v1.11.0",
+                "issues": "https://github.com/biigle/projects/issues"
+            },
+            "time": "2018-09-10T14:41:04+00:00"
+        },
+        {
+            "name": "biigle/volumes",
+            "version": "v2.7.3",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:biigle/volumes.git",
+                "reference": "86604052b7d8e20fba50d5902e4ba8758b84574b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/biigle/volumes/zipball/86604052b7d8e20fba50d5902e4ba8758b84574b",
+                "reference": "86604052b7d8e20fba50d5902e4ba8758b84574b",
+                "shasum": ""
+            },
+            "require": {
+                "biigle/label-trees": "~1.3",
+                "biigle/projects": "~1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Biigle\\Modules\\Volumes\\": "src"
+                }
+            },
+            "scripts": {
+                "fix": [
+                    "php-cs-fixer --config-file='.php_cs' fix"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Martin Zurowietz",
+                    "email": "martin@cebitec.uni-bielefeld.de"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/biigle/volumes/tree/v2.7.3",
+                "issues": "https://github.com/biigle/volumes/issues"
+            },
+            "time": "2018-10-25T12:31:15+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -1637,6 +1849,63 @@
             "description": "The Illuminate View package.",
             "homepage": "https://laravel.com",
             "time": "2018-10-02T13:51:18+00:00"
+        },
+        {
+            "name": "jcupitt/vips",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libvips/php-vips.git",
+                "reference": "3678b8a4b1c301c9e6f6e136746f5894e85b9dbe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libvips/php-vips/zipball/3678b8a4b1c301c9e6f6e136746f5894e85b9dbe",
+                "reference": "3678b8a4b1c301c9e6f6e136746f5894e85b9dbe",
+                "shasum": ""
+            },
+            "require": {
+                "ext-vips": ">=0.1.2",
+                "php": ">=7.0.11",
+                "psr/log": "^1.0.2"
+            },
+            "require-dev": {
+                "jakub-onderka/php-parallel-lint": "^1.0.0",
+                "phpdocumentor/phpdocumentor": "^2.9",
+                "phpunit/phpunit": "^6.5",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jcupitt\\Vips\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Cupitt",
+                    "email": "jcupitt@gmail.com",
+                    "homepage": "https://github.com/jcupitt",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A high-level interface to the libvips image processing library.",
+            "homepage": "https://github.com/libvips/php-vips",
+            "keywords": [
+                "image",
+                "libvips",
+                "processing"
+            ],
+            "time": "2018-10-04T15:25:12+00:00"
         },
         {
             "name": "laravel/lumen-framework",
@@ -5043,7 +5312,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "biigle/maia": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
