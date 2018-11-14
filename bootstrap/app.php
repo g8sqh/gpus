@@ -25,6 +25,10 @@ $app = new Laravel\Lumen\Application(
 
 $app->withFacades();
 
+if (!class_exists(ImageCache::class)) {
+    class_alias(Biigle\ImageCache\Facades\ImageCache::class, 'ImageCache');
+}
+
 // $app->withEloquent();
 
 // Ensure that Redis is properly loaded.

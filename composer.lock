@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1415fa21888376bdc226eaf0c88dbd1b",
+    "content-hash": "9ba376aae1a90c817740175db55b6325",
     "packages": [
         {
             "name": "biigle/annotations",
@@ -77,16 +77,16 @@
         },
         {
             "name": "biigle/laravel-image-cache",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:biigle/laravel-image-cache.git",
-                "reference": "dc5dcf0bc57b36141e38953a09a06e2e0077cea7"
+                "reference": "d9c11a08f860ebd76ba3e9bf70dbf7a30299f197"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/biigle/laravel-image-cache/zipball/dc5dcf0bc57b36141e38953a09a06e2e0077cea7",
-                "reference": "dc5dcf0bc57b36141e38953a09a06e2e0077cea7",
+                "url": "https://api.github.com/repos/biigle/laravel-image-cache/zipball/d9c11a08f860ebd76ba3e9bf70dbf7a30299f197",
+                "reference": "d9c11a08f860ebd76ba3e9bf70dbf7a30299f197",
                 "shasum": ""
             },
             "require": {
@@ -127,15 +127,15 @@
             "authors": [
                 {
                     "name": "Martin Zurowietz",
-                    "email": "martin@zurowietz.de"
+                    "email": "martin@cebitec.uni-bielefeld.de"
                 }
             ],
             "description": "Fetch and cache image files from filesystem, cloud storage or public webservers in Laravel",
             "support": {
-                "source": "https://github.com/biigle/laravel-image-cache/tree/master",
+                "source": "https://github.com/biigle/laravel-image-cache/tree/v1.1.0",
                 "issues": "https://github.com/biigle/laravel-image-cache/issues"
             },
-            "time": "2018-10-11T12:17:03+00:00"
+            "time": "2018-11-14T14:00:35+00:00"
         },
         {
             "name": "biigle/laravel-remote-queue",
