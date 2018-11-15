@@ -18,6 +18,7 @@ COPY .docker/requirements.txt /tmp/requirements.txt
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         python3 libfreetype6 liblapack3 libstdc++6 libjpeg62-turbo libpng16-16 \
+        libsm6 libxext6 libxrender1 \
         build-essential python3-dev python3-pip python3-setuptools libfreetype6-dev \
         liblapack-dev gfortran libjpeg62-turbo-dev libpng-dev zlib1g-dev \
     && pip3 install --no-cache-dir -r /tmp/requirements.txt \
