@@ -36,6 +36,17 @@ return [
             'root' => storage_path('images'),
         ],
 
+        'swift' => [
+            'driver'    => 'swift',
+            'authUrl'   => env('OS_AUTH_URL', ''),
+            'region'    => env('OS_REGION_NAME', ''),
+            'user'      => env('OS_USERNAME', ''),
+            'domain'    => env('OS_USER_DOMAIN_NAME', 'default'),
+            'password'  => env('OS_PASSWORD', ''),
+            'projectId' => env('OS_PROJECT_ID', ''),
+            'container' => env('OS_CONTAINER_NAME', ''),
+        ],
+
     ],
 
 ];

@@ -94,6 +94,7 @@ $app->singleton(
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(Biigle\ImageCache\ImageCacheServiceProvider::class);
+$app->register(Mzur\Filesystem\SwiftServiceProvider::class);
 $app->register(Biigle\RemoteQueue\RemoteQueueServiceProvider::class);
 $app->register(Biigle\Modules\Maia\MaiaGpuServiceProvider::class);
 
