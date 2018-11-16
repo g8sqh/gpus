@@ -2,7 +2,7 @@ FROM biigle/gpu-server:arm64v8 as intermediate
 
 # Use an image based on Debian as we want to install TensorFlow. This didn't work
 # with Alpine Linux.
-FROM arm64v8/php:7.2-cli-alpine
+FROM arm64v8/php:7.2-cli
 MAINTAINER Martin Zurowietz <martin@cebitec.uni-bielefeld.de>
 
 RUN apt-get update \
