@@ -25,6 +25,10 @@ $app = new Laravel\Lumen\Application(
 
 $app->withFacades();
 
+if (!class_exists(File::class)) {
+    class_alias(Illuminate\Support\Facades\File::class, 'File');
+}
+
 if (!class_exists(ImageCache::class)) {
     class_alias(Biigle\ImageCache\Facades\ImageCache::class, 'ImageCache');
 }
@@ -94,6 +98,7 @@ $app->singleton(
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(Biigle\ImageCache\ImageCacheServiceProvider::class);
+$app->register(Illuminate\Filesystem\FilesystemServiceProvider::class);
 $app->register(Mzur\Filesystem\SwiftServiceProvider::class);
 $app->register(Biigle\RemoteQueue\RemoteQueueServiceProvider::class);
 $app->register(Biigle\Modules\Maia\MaiaGpuServiceProvider::class);
