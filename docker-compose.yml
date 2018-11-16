@@ -3,7 +3,7 @@ version: '2.2'
 services:
   # The application
   app:
-    image: biigle/gpu-server
+    image: biigle/gpu-server:arm64v8
     user: ${USER_ID}:${GROUP_ID}
     build:
       dockerfile: .docker/gpu-server.dockerfile
@@ -18,7 +18,7 @@ services:
 
   # The web server
   web:
-    image: biigle/gpu-server-web
+    image: biigle/gpu-server-web:arm64v8
     depends_on:
       - app
     build:
@@ -31,7 +31,7 @@ services:
       - 8001:80
 
   worker:
-    image: biigle/gpu-server-worker
+    image: biigle/gpu-server-worker:arm64v8
     user: ${USER_ID}:${GROUP_ID}
     depends_on:
       - app
@@ -46,5 +46,5 @@ services:
     command: "php -d memory_limit=1G artisan queue:work --sleep=5 --tries=1 --timeout=0"
 
   cache:
-    image: redis:3.0-alpine
+    image: arm64v8/redis:3.2-alpine
 
