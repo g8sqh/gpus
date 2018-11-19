@@ -13,6 +13,7 @@ RUN apt-get update \
 # Set this library path to the Python modules are linked correctly.
 # See: https://github.com/python-pillow/Pillow/issues/1763#issuecomment-204252397
 ENV LIBRARY_PATH=/lib:/usr/lib
+
 COPY .docker/requirements.txt /tmp/requirements.txt
 # Install Python dependencies.
 RUN apt-get update \
@@ -28,6 +29,29 @@ RUN apt-get update \
     && apt-get -y autoremove \
     && rm -r /var/lib/apt/lists/* \
     && rm /tmp/requirements.txt
+
+# Build OpenCV from source (for ARM)
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        libgtk2.0-0 libtbb2 libdc1394-22 libavcodec57 libavformat57 libswscale4 \
+        python3-numpy \
+        build-essential cmake libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev \
+        libswscale-dev python3-dev libtbb-dev libjpeg-dev libpng-dev libtiff5-dev \
+        libdc1394-22-dev \
+    && curl -L https://github.com/opencv/opencv/archive/3.4.3.tar.gz -o 3.4.3.tar.gz \
+    && tar -xzf 3.4.3.tar.gz && cd opencv-3.4.3 \
+    && mkdir release && cd release \
+    && cmake -DBUILD_TIFF=ON -DBUILD_opencv_java=OFF -DWITH_CUDA=OFF -DWITH_OPENGL=ON \
+        -DWITH_OPENCL=ON -DWITH_VTK=OFF -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF \
+        -DCMAKE_BUILD_TYPE=RELEASE .. \
+    && make \
+    && make install \
+    && apt-get purge -y \
+        build-essential cmake libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev \
+        libswscale-dev python3-dev libtbb-dev libjpeg-dev libpng-dev libtiff5-dev \
+        libdc1394-22-dev \
+    && apt-get -y autoremove \
+    && rm -r /var/lib/apt/lists/*
 
 # Just copy from intermediate biigle/app so the installation of dependencies with
 # Composer doesn't have to run twice.
