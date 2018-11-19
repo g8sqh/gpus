@@ -22,9 +22,10 @@ RUN apt-get update \
         libsm6 libxext6 libxrender1 cython3 \
         build-essential python3-dev python3-pip python3-setuptools libfreetype6-dev \
         liblapack-dev gfortran libjpeg62-turbo-dev libpng-dev zlib1g-dev libhdf5-dev \
+    && pip3 install --no-cache-dir -r /tmp/requirements.txt \
     && pip3 install --no-cache-dir \
         --extra-index-url https://developer.download.nvidia.com/compute/redist/jp33 \
-        -r /tmp/requirements.txt \
+        tensorflow-gpu \
     && apt-get purge -y \
         build-essential python3-dev python3-pip python3-setuptools libfreetype6-dev \
         liblapack-dev gfortran libjpeg62-turbo-dev libpng-dev zlib1g-dev libhdf5-dev \
