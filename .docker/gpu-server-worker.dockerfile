@@ -23,15 +23,16 @@ RUN apt-get update \
         build-essential python3-dev python3-pip python3-setuptools libfreetype6-dev \
         liblapack-dev gfortran libjpeg62-turbo-dev libpng-dev zlib1g-dev libhdf5-dev \
     && pip3 install --no-cache-dir -r /tmp/requirements.txt \
-    && pip3 install --no-cache-dir \
+    && pip3 install \
         --extra-index-url https://developer.download.nvidia.com/compute/redist/jp33 \
         tensorflow-gpu \
+    && rm -r ~/.cache \
     && apt-get purge -y \
         build-essential python3-dev python3-pip python3-setuptools libfreetype6-dev \
         liblapack-dev gfortran libjpeg62-turbo-dev libpng-dev zlib1g-dev libhdf5-dev \
     && apt-get -y autoremove \
     && rm -r /var/lib/apt/lists/* \
-    && rm /tmp/requirements.txt
+    && rm /tmp/*
 
 # Build OpenCV from source (for ARM)
 RUN apt-get update \
