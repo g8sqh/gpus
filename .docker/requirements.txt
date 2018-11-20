@@ -4,9 +4,11 @@ scikit-learn
 Pillow
 matplotlib
 scikit-image
+# Tensorflow is installed separately for the Jetson TX2
 #tensorflow-gpu>=1.3.0
 #tensorflow>=1.3.0
 keras>=2.0.8
+# OpenCV is built from source for the Jetson TX2
 #opencv-python
 h5py
 imgaug
