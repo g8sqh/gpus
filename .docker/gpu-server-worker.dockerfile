@@ -23,7 +23,7 @@ RUN apt-get update \
         liblapack-dev gfortran libjpeg62-turbo-dev libpng-dev zlib1g-dev libhdf5-dev \
     && pip3 install wheel \
     && pip3 install --no-cache-dir -r /tmp/requirements.txt \
-    && pip3 uninstall wheel \
+    && pip3 uninstall -y wheel \
     && apt-get purge -y \
         build-essential python3-dev python3-pip python3-setuptools libfreetype6-dev \
         liblapack-dev gfortran libjpeg62-turbo-dev libpng-dev zlib1g-dev libhdf5-dev \
