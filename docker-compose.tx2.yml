@@ -4,6 +4,7 @@ version: '2.2'
 services:
   worker:
     devices:
+      # These devices are required for the container to use the Jetson GPU.
       - /dev/nvhost-ctrl
       - /dev/nvhost-ctrl-gpu
       - /dev/nvhost-prof-gpu
@@ -11,6 +12,8 @@ services:
       - /dev/nvhost-gpu
       - /dev/nvhost-as-gpu
     volumes:
+      # These directories contain the CUDA and cuDNN libraries that are exposed to the
+      # Docker container via the LD_LIBRARY_PATH below.
       - /usr/lib/aarch64-linux-gnu/:/usr/lib/aarch64-linux-gnu/host
       - /usr/local/cuda:/usr/local/cuda
     environment:

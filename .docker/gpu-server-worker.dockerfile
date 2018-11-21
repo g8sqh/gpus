@@ -44,6 +44,7 @@ RUN apt-get update \
         build-essential cmake libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev \
         libswscale-dev python3-dev libtbb-dev libjpeg-dev libpng-dev libtiff5-dev \
         libdc1394-22-dev \
+    && cd /tmp \
     && curl -L https://github.com/opencv/opencv/archive/3.4.3.tar.gz -o 3.4.3.tar.gz \
     && tar -xzf 3.4.3.tar.gz && cd opencv-3.4.3 \
     && mkdir release && cd release \
@@ -57,7 +58,8 @@ RUN apt-get update \
         libswscale-dev python3-dev libtbb-dev libjpeg-dev libpng-dev libtiff5-dev \
         libdc1394-22-dev \
     && apt-get -y autoremove \
-    && rm -r /var/lib/apt/lists/*
+    && rm -r /var/lib/apt/lists/* \
+    && rm -r /tmp/*
 
 # Just copy from intermediate biigle/app so the installation of dependencies with
 # Composer doesn't have to run twice.
