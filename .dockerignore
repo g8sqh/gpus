@@ -1,0 +1,11 @@
+.git
+.env
+node_modules
+public/vendor/**
+storage
+tmp
+vendor
+
+*.phar
+*.php_cs.cache
+*.sh
