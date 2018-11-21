@@ -15,7 +15,7 @@ All GPU modules should use Python 3 for computation, so run all scripts with `py
 
 ### For Production
 
-Run `docker-compose build` to build the `biigle/gpu-server`, `biigle/gpu-server-web` and `biigle/gpu-server-worker` Docker images.
+Run `docker-compose build` to build the `biigle/gpus-app`, `biigle/gpus-web` and `biigle/gpus-worker` Docker images.
 
 Now head over to [the distribution repository (TODO)](#) to configure and build your production setup.
 
@@ -25,10 +25,10 @@ To develop the BIIGLE GPU server on your local machine you may use Docker contai
 
 #### Download the project files
 
-Set up the project in the `biigle-gpu-server` directory (using [Composer](https://getcomposer.org/doc/00-intro.md)):
+Set up the project in the `biigle-gpus` directory (using [Composer](https://getcomposer.org/doc/00-intro.md)):
 
 ```
-composer create-project biigle/gpu-server:dev-master --repository='{"type":"vcs","url":"git@github.com:biigle/gpu-server.git"}' --keep-vcs --ignore-platform-reqs --prefer-source biigle-gpu-server
+composer create-project biigle/gpus:dev-master --repository='{"type":"vcs","url":"git@github.com:biigle/gpus.git"}' --keep-vcs --ignore-platform-reqs --prefer-source biigle-gpus
 ```
 
 Note the `--ignore-platform-reqs` flag to keep Composer from complaining about missing requirements. These requirements will be met by the Docker containers.

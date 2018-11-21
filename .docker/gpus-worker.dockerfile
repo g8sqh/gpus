@@ -1,4 +1,4 @@
-FROM biigle/gpu-server:arm64v8 as intermediate
+FROM biigle/gpus-app:arm64v8 as intermediate
 
 # Use an image based on Debian as we want to install TensorFlow. This didn't work
 # with Alpine Linux.
