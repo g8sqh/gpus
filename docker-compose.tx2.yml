@@ -3,6 +3,8 @@ version: '2.2'
 # Overrides according to https://github.com/Technica-Corporation/Tegra-Docker#docker-configuration
 services:
   worker:
+    group_add:
+      - video
     devices:
       # These devices are required for the container to use the Jetson GPU.
       - /dev/nvhost-ctrl
