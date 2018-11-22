@@ -9,7 +9,7 @@ Application to process jobs submitted from BIIGLE on a GPU.
 
 ## Available Python Packages
 
-All GPU modules should use Python 3 for computation, so run all scripts with `python3`. See the [`requirements.txt`](.docker/requirements.txt) for the available Python 3 packages.
+All GPU modules should use Python 3 for computation, so run all scripts with `python3`. See the [`requirements.txt`](.docker/requirements.txt) for the available Python 3 packages. In addition to those, TensorFlow is provided.
 
 ## Installation
 

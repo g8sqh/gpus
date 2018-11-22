@@ -1,13 +1,15 @@
 FROM biigle/gpus-app as intermediate
 
-# Use an image based on Debian as we want to install TensorFlow. This didn't work
-# with Alpine Linux.
-FROM php:7.1
+FROM tensorflow/tensorflow:1.12.0-gpu-py3
 MAINTAINER Martin Zurowietz <martin@cebitec.uni-bielefeld.de>
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends openssl libxml2-dev \
-    && docker-php-ext-install pdo json mbstring pcntl \
+# Install PHP 7.1 because this time we start from the TensorFLow base image.
+RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php \
+    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+        php7.1-cli php7.1-curl php7.1-pgsql php7.1-json php7.1-mbstring \
+    && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
 # Set this library path to the Python modules are linked correctly.
@@ -17,19 +19,17 @@ COPY .docker/requirements.txt /tmp/requirements.txt
 # Install Python dependencies.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        python3 libfreetype6 liblapack3 libstdc++6 libjpeg62-turbo libpng16-16 \
-        libsm6 libxext6 libxrender1 zlib1g libhdf5-100 \
+        python3 libfreetype6 liblapack3 libstdc++6 libjpeg62 libpng16-16 \
+        libsm6 libxext6 libxrender1 zlib1g libhdf5-10 \
         build-essential python3-dev python3-pip python3-setuptools libfreetype6-dev \
-        liblapack-dev gfortran libjpeg62-turbo-dev libpng-dev zlib1g-dev libhdf5-dev \
-    && pip3 install wheel \
+        liblapack-dev gfortran libjpeg-dev libpng-dev zlib1g-dev libhdf5-dev \
     && pip3 install --no-cache-dir -r /tmp/requirements.txt \
-    && pip3 uninstall -y wheel \
     && apt-get purge -y \
         build-essential python3-dev python3-pip python3-setuptools libfreetype6-dev \
-        liblapack-dev gfortran libjpeg62-turbo-dev libpng-dev zlib1g-dev libhdf5-dev \
-    && apt-get -y autoremove \
+        liblapack-dev gfortran libjpeg-dev libpng-dev zlib1g-dev libhdf5-dev \
+    && apt-get clean \
     && rm -r /var/lib/apt/lists/* \
-    && rm /tmp/*
+    && rm -r /tmp/*
 
 # Just copy from intermediate biigle/app so the installation of dependencies with
 # Composer doesn't have to run twice.
