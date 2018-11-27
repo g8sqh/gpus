@@ -70,16 +70,16 @@
         },
         {
             "name": "biigle/laravel-remote-queue",
-            "version": "v2.0.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:biigle/laravel-remote-queue.git",
-                "reference": "bd7376fe148c2829eab7bb1c2f471a31a98e1338"
+                "reference": "d4797707e297ccb24bb0da8bf4d04ca38fff69b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/biigle/laravel-remote-queue/zipball/bd7376fe148c2829eab7bb1c2f471a31a98e1338",
-                "reference": "bd7376fe148c2829eab7bb1c2f471a31a98e1338",
+                "url": "https://api.github.com/repos/biigle/laravel-remote-queue/zipball/d4797707e297ccb24bb0da8bf4d04ca38fff69b4",
+                "reference": "d4797707e297ccb24bb0da8bf4d04ca38fff69b4",
                 "shasum": ""
             },
             "require": {
@@ -123,10 +123,10 @@
             ],
             "description": "Submit jobs to and receive jobs from other Laravel or Lumen instances.",
             "support": {
-                "source": "https://github.com/biigle/laravel-remote-queue/tree/v0.2.2",
+                "source": "https://github.com/biigle/laravel-remote-queue/tree/v2.1.0",
                 "issues": "https://github.com/biigle/laravel-remote-queue/issues"
             },
-            "time": "2018-10-31T10:06:32+00:00"
+            "time": "2018-11-27T09:49:42+00:00"
         },
         {
             "name": "doctrine/inflector",
