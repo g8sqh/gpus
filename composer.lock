@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6df75e58796f6ac09914c57f3a8a3fc2",
+    "content-hash": "0ec516c32910f1a4a9fb20e5e3828e4c",
     "packages": [
         {
             "name": "biigle/annotations",
@@ -80,7 +80,7 @@
             "version": "v1.1.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:biigle/laravel-image-cache.git",
+                "url": "https://github.com/biigle/laravel-image-cache.git",
                 "reference": "a0e8705e7bd8e36e2089f40e57cab8951d3be7e1"
             },
             "dist": {
@@ -142,7 +142,7 @@
             "version": "v2.1.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:biigle/laravel-remote-queue.git",
+                "url": "https://github.com/biigle/laravel-remote-queue.git",
                 "reference": "d4797707e297ccb24bb0da8bf4d04ca38fff69b4"
             },
             "dist": {
@@ -235,17 +235,18 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:biigle/maia.git",
-                "reference": "b5c39be8b531d3d7ed41e40c9cc1fbb4b2942313"
+                "reference": "0b9f5e4453dd69a9a2c801341876e713e67946ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/biigle/maia/zipball/b5c39be8b531d3d7ed41e40c9cc1fbb4b2942313",
-                "reference": "b5c39be8b531d3d7ed41e40c9cc1fbb4b2942313",
+                "url": "https://api.github.com/repos/biigle/maia/zipball/0b9f5e4453dd69a9a2c801341876e713e67946ca",
+                "reference": "0b9f5e4453dd69a9a2c801341876e713e67946ca",
                 "shasum": ""
             },
             "require": {
                 "biigle/annotations": "^3.9",
                 "biigle/label-trees": "^1.19",
+                "biigle/laravel-image-cache": "^1.1",
                 "biigle/largo": "^2.4",
                 "biigle/volumes": "^2.7"
             },
@@ -266,7 +267,7 @@
                 "source": "https://github.com/biigle/maia/tree/master",
                 "issues": "https://github.com/biigle/maia/issues"
             },
-            "time": "2018-11-08T09:33:00+00:00"
+            "time": "2018-12-14T15:31:20+00:00"
         },
         {
             "name": "biigle/projects",
