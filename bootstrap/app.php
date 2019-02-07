@@ -29,8 +29,8 @@ if (!class_exists(File::class)) {
     class_alias(Illuminate\Support\Facades\File::class, 'File');
 }
 
-if (!class_exists(ImageCache::class)) {
-    class_alias(Biigle\ImageCache\Facades\ImageCache::class, 'ImageCache');
+if (!class_exists(FileCache::class)) {
+    class_alias(Biigle\FileCache\Facades\FileCache::class, 'FileCache');
 }
 
 // $app->withEloquent();
@@ -97,7 +97,7 @@ $app->singleton(
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(Illuminate\Redis\RedisServiceProvider::class);
-$app->register(Biigle\ImageCache\ImageCacheServiceProvider::class);
+$app->register(Biigle\FileCache\FileCacheServiceProvider::class);
 $app->register(Illuminate\Filesystem\FilesystemServiceProvider::class);
 $app->register(Biigle\RemoteQueue\RemoteQueueServiceProvider::class);
 
