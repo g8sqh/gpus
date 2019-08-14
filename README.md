@@ -17,7 +17,7 @@ All GPU modules should use Python 3 for computation, so run all scripts with `py
 
 Run `docker-compose build` to build the `biigle/gpus-app`, `biigle/gpus-web` and `biigle/gpus-worker` Docker images.
 
-Now head over to [the distribution repository (TODO)](#) to configure and build your production setup.
+Now head over to [the distribution repository](https://github.com/biigle/gpus-distribution) to configure and build your production setup.
 
 ### For Development
 
