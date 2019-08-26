@@ -8,27 +8,27 @@ git describe --tags --exact-match &> /dev/null
 if [ $? -eq 0 ]; then
     VERSION=$(git describe --tags)
     docker tag \
-        docker.pkg.github.com/biigle/gpus/app:latest \
-        docker.pkg.github.com/biigle/gpus/app:$VERSION
+        docker.pkg.github.com/biigle/gpus/gpus-app:latest \
+        docker.pkg.github.com/biigle/gpus/gpus-app:$VERSION
     docker tag \
-        docker.pkg.github.com/biigle/gpus/worker:latest \
-        docker.pkg.github.com/biigle/gpus/worker:$VERSION
+        docker.pkg.github.com/biigle/gpus/gpus-worker:latest \
+        docker.pkg.github.com/biigle/gpus/gpus-worker:$VERSION
     docker tag \
-        docker.pkg.github.com/biigle/gpus/web:latest \
-        docker.pkg.github.com/biigle/gpus/web:$VERSION
+        docker.pkg.github.com/biigle/gpus/gpus-web:latest \
+        docker.pkg.github.com/biigle/gpus/gpus-web:$VERSION
 
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        docker push docker.pkg.github.com/biigle/gpus/app:$VERSION
-        docker push docker.pkg.github.com/biigle/gpus/worker:$VERSION
-        docker push docker.pkg.github.com/biigle/gpus/web:$VERSION
+        docker push docker.pkg.github.com/biigle/gpus/gpus-app:$VERSION
+        docker push docker.pkg.github.com/biigle/gpus/gpus-worker:$VERSION
+        docker push docker.pkg.github.com/biigle/gpus/gpus-web:$VERSION
     fi
 fi
 
 # Update the "latest" images if the current HEAD is on master.
 if [ "$(git rev-parse --abbrev-ref HEAD)" == "master" ]; then
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        docker push docker.pkg.github.com/biigle/gpus/app:latest
-        docker push docker.pkg.github.com/biigle/gpus/worker:latest
-        docker push docker.pkg.github.com/biigle/gpus/web:latest
+        docker push docker.pkg.github.com/biigle/gpus/gpus-app:latest
+        docker push docker.pkg.github.com/biigle/gpus/gpus-worker:latest
+        docker push docker.pkg.github.com/biigle/gpus/gpus-web:latest
     fi
 fi
