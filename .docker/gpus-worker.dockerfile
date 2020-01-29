@@ -1,6 +1,6 @@
 FROM docker.pkg.github.com/biigle/gpus/gpus-app as intermediate
 
-FROM tensorflow/tensorflow:1.13.2-gpu-py3
+FROM tensorflow/tensorflow:1.15.2-gpu-py3
 MAINTAINER Martin Zurowietz <martin@cebitec.uni-bielefeld.de>
 
 # Install PHP 7.3 because this time we start from the TensorFlow base image.
