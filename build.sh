@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+VERSION=$1
+
+if [ -z "$VERSION" ]; then
+    VERSION=$(git describe --tags)
+    read -p "No build version specified, using latest git tag ${VERSION}. Press enter to continue."
+fi
+
 docker-compose build
 
 read -p "Publish the images to GitHub? [y/N]" -n 1 -r
@@ -7,7 +14,6 @@ read -p "Publish the images to GitHub? [y/N]" -n 1 -r
 git describe --tags --exact-match &> /dev/null
 if [ $? -eq 0 ]; then
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        VERSION=$(git describe --tags)
         docker tag \
             docker.pkg.github.com/biigle/gpus/gpus-app:latest \
             docker.pkg.github.com/biigle/gpus/gpus-app:$VERSION
