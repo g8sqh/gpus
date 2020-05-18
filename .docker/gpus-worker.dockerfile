@@ -8,11 +8,11 @@ RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        php7.3-cli \
-        php7.3-curl \
-        php7.3-pgsql \
-        php7.3-json \
-        php7.3-mbstring \
+        php7.4-cli \
+        php7.4-curl \
+        php7.4-pgsql \
+        php7.4-json \
+        php7.4-mbstring \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
