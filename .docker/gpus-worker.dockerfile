@@ -3,7 +3,7 @@ FROM docker.pkg.github.com/biigle/gpus/gpus-app as intermediate
 FROM tensorflow/tensorflow:1.15.2-gpu-py3
 MAINTAINER Martin Zurowietz <martin@cebitec.uni-bielefeld.de>
 
-# Install PHP 7.3 because this time we start from the TensorFlow base image.
+# Install PHP 7.4 because this time we start from the TensorFlow base image.
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C \
     && apt-get update \
@@ -13,6 +13,7 @@ RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php \
         php7.4-pgsql \
         php7.4-json \
         php7.4-mbstring \
+        php-redis \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
