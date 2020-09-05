@@ -3,7 +3,7 @@ version: '2.2'
 services:
   # The application
   app:
-    image: biigle/gpus-app
+    image: docker.pkg.github.com/biigle/gpus/gpus-app
     user: ${USER_ID}:${GROUP_ID}
     build:
       dockerfile: .docker/gpus-app.dockerfile
@@ -18,7 +18,7 @@ services:
 
   # The web server
   web:
-    image: biigle/gpus-web
+    image: docker.pkg.github.com/biigle/gpus/gpus-web
     depends_on:
       - app
     build:
@@ -31,7 +31,7 @@ services:
       - 8001:80
 
   worker:
-    image: biigle/gpus-worker
+    image: docker.pkg.github.com/biigle/gpus/gpus-worker
     user: ${USER_ID}:${GROUP_ID}
     depends_on:
       - app

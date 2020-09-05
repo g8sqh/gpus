@@ -1,8 +1,8 @@
-FROM php:7.1-fpm-alpine
+FROM php:7.4-fpm-alpine
 MAINTAINER Martin Zurowietz <martin@cebitec.uni-bielefeld.de>
 
 RUN apk add --no-cache openssl libxml2-dev \
-    && docker-php-ext-install pdo json mbstring
+    && docker-php-ext-install pdo json
 
 COPY composer.lock composer.json /var/www/
 
