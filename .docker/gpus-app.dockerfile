@@ -1,5 +1,5 @@
 FROM php:7.4-fpm-alpine
-MAINTAINER Martin Zurowietz <martin@cebitec.uni-bielefeld.de>
+MAINTAINER David Hutchinson <djch-biigle@hutchhome.co.uk>
 
 RUN apk add --no-cache openssl libxml2-dev \
     && docker-php-ext-install pdo json

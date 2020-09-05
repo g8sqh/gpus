@@ -1,7 +1,7 @@
-FROM docker.pkg.github.com/biigle/gpus/gpus-app as intermediate
+FROM g8sqh/gpus/gpus-app as intermediate
 
 FROM tensorflow/tensorflow:1.15.2-gpu-py3
-MAINTAINER Martin Zurowietz <martin@cebitec.uni-bielefeld.de>
+MAINTAINER David Hutchinson <djch-biigle@hutchhome.co.uk>
 
 # Install PHP 7.4 because this time we start from the TensorFlow base image.
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php \
