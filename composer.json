@@ -68,25 +68,9 @@
             "type": "vcs",
             "url": "https://github.com/g8sqh/maia"
         },
-        "volumes": {
-            "type": "vcs",
-            "url": "https://github.com/biigle/volumes"
-        },
-        "label-trees": {
-            "type": "vcs",
-            "url": "https://github.com/biigle/label-trees"
-        },
         "largo": {
             "type": "vcs",
             "url": "https://github.com/biigle/largo"
-        },
-        "annotations": {
-            "type": "vcs",
-            "url": "https://github.com/biigle/annotations"
-        },
-        "projects": {
-            "type": "vcs",
-            "url": "https://github.com/biigle/projects"
         }
     }
 }
